@@ -52,12 +52,14 @@ end
 
 loop do 
   puts "\nВведите количество дней пребывания в отеле:"
-  input_days = gets.strip.to_i
+  input_days = gets.strip
   
-  if input_days < 1
+  if input_days.empty? 
+    puts "\n Вы ничего не ввели" 
+  elsif input_days.to_i < 1
     puts "Минимальный срок пребывания - 1 день" 
   else
-    days = input_days
+    days = input_days.to_i
     break
   end
 end
